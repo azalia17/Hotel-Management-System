@@ -225,7 +225,7 @@ inner join rooms_booked rb on (bd.booking_id = rb.booking_id) inner join rooms r
 		            <th scope="col">Check out date</th>
                 <th scope="col">Total amount</th>
                 <th scope="col">Employee</th>
-                <th scope="col">Action</th>
+                <!-- <th scope="col">Action</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -244,10 +244,10 @@ foreach ($connec->query($booking) as $row)
     <td> <?php print $row['check_out_date'] ?> </td>
     <td> <?php print $row['total_amount'] ?> </td>
     <td> <?php print $row['employee'] ?> </td>
-		<td>
+		<!-- <td>
             <a href="#"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></a>
             <a href="#" onclick="return confirm('You sure want to delete the data of <?php echo $row['gname'];?> ?')"><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
-        </td>
+        </td> -->
 	<?php 
 }
 ?>

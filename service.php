@@ -235,8 +235,8 @@ foreach ($connec->query($service) as $row)
 		<td> <?php print $row['service_description'] ?> </td>
 		<td> <?php print $row['service_cost'] ?> </td>
 		<td>
-            <a href="#"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></a>
-            <a href="#" onclick="return confirm('You sure want to delete the data of <?php echo $row['service_name'];?> ?')"><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
+            <a href="service-update.php?id=<?php echo $row['service_id']?>"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></a>
+            <!-- <a href="#" onclick="return confirm('You sure want to delete the data of <?php echo $row['service_name'];?> ?')"><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a> -->
         </td>
 	<?php 
 }

@@ -159,38 +159,38 @@ $rooms = "select room_id, room_number, room_type_name, room_cost, smoke_friendly
 
   <main id="main" class="main">
   <?php        
-            if(isset($_SESSION['insert_guest_success']))
+            if(isset($_SESSION['insert_room_success']))
             {
                 ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <?= $_SESSION['insert_guest_success']; ?>
+                <?= $_SESSION['insert_room_success']; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
                   
                 <?php 
-                unset($_SESSION['insert_guest_success']);
+                unset($_SESSION['insert_room_success']);
             }
-            if(isset($_SESSION['delete_guest_success']))
+            if(isset($_SESSION['delete_room_success']))
             {
                 ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <?= $_SESSION['delete_guest_success']; ?>
+                <?= $_SESSION['delete_room_success']; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
                   
                 <?php 
-                unset($_SESSION['delete_guest_success']);
+                unset($_SESSION['delete_room_success']);
             }
-            if(isset($_SESSION['update_guest_success']))
+            if(isset($_SESSION['update_room_success']))
             {
                 ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <?= $_SESSION['update_guest_success']; ?>
+                <?= $_SESSION['update_room_success']; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
                   
                 <?php 
-                unset($_SESSION['update_guest_success']);
+                unset($_SESSION['update_room_success']);
             }
         ?>
     <div class="pagetitle">
@@ -220,7 +220,7 @@ $rooms = "select room_id, room_number, room_type_name, room_cost, smoke_friendly
 		              <th scope="col">cost</th>
 		            <th scope="col">smoke friendly</th>
 		            <th scope="col">pet_friendly</th>
-                <th scope="col">Action</th>
+                <!-- <th scope="col">Action</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -235,10 +235,10 @@ foreach ($connec->query($rooms) as $row)
 		<td> <?php print $row['room_cost'] ?> </td>
 		<td> <?php print $row['smoke_friendly'] ?> </td>
 		<td> <?php print $row['pet_friendly'] ?> </td>
-		<td>
+		<!-- <td>
             <a href="#"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></a>
             <a href="#" onclick="return confirm('You sure want to delete the data of <?php echo $row['room_id'];?> ?')"><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
-        </td>
+        </td> -->
 	<?php 
 }
 ?>
